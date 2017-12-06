@@ -5,6 +5,7 @@ ruby '2.4.1'
 
 gem 'active_model_serializers', '~> 0.10.6'
 gem 'bcrypt', '~> 3.1.11'
+gem 'darksky'
 gem 'geocoder'
 gem 'pg'
 gem 'puma', '~> 3.0'
