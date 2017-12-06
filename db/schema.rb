@@ -24,10 +24,13 @@ ActiveRecord::Schema.define(version: 20171206040139) do
   end
 
   create_table "locations", force: :cascade do |t|
+    t.text "address", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,4 +44,5 @@ ActiveRecord::Schema.define(version: 20171206040139) do
   end
 
   add_foreign_key "examples", "users"
+  add_foreign_key "locations", "users"
 end
