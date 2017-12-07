@@ -41,11 +41,11 @@ class WeathersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_weather
-      @weather = Weather.find(params[:id])
+      @weather = Weather.find(params[:address])
     end
 
     # Only allow a trusted parameter "white list" through.
     def weather_params
-      params.require(:weather).permit(:longitude, :latitude)
+      params.require(:weather).permit(:longitude, :latitude, :forecast)
     end
 end
